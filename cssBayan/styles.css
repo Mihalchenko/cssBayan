@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('icomoon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-plus:before {
+    content: "\ea0a";
+}
+.icon-cross:before {
+    content: "\ea0f";
+}
+.icon-plus, .icon-cross {
+    animation-name: IconAppear;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+}
+@keyframes IconAppear {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+* {
+    font-size: 1.05em;
+}
+h1 {
+    font-size: 2em;
+}
+body {
+    background-color: rgb(245,245,235);
+    min-width: 320px;
+}
+p {
+    color: blue;
+}
+img {
+    width: 320px;
+    display: block;
+    margin: 10px auto;
+    display: none;
+    animation-name: ImageAppear;
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+}
+@keyframes ImageAppear {
+    0% {opacity: 0; width: 0;}
+    100% {opacity: 1;}
+}
+.main, .header {
+    width: 85%;
+    margin: auto;
+}
+.description {
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px lightgray solid;
+    display: flex;
+    justify-content: space-between;
+}
+.icon-cross, .icon-plus {
+    display: none;
+}
+.main:hover p {
+    color: black;
+}
+.main:hover .icon-plus {
+    display: inherit;
+}
+.radio input[type=radio] {
+    display: none;
+}
+.radio label {
+	cursor: pointer;
+}
+.radio input[type=radio]:checked + label p {
+    color: black;
+}
+.radio input[type=radio]:checked + label p.icon-plus {
+    display: none;
+}
+.main:hover .radio input[type=radio]:checked + label p.icon-cross {
+    display: inherit;
+}
+.radio input[type=radio]:checked + label img {
+    display: block;
+}
+.radio input[type=radio]:hover + label img {
+    display: block;
+}
+div.description:hover p.icon-plus {
+    display: none;
+}
+div.description:hover p.icon-cross {
+    display: inherit;
+}
+img:hover {
+    transform: scale(1.01);
+}
+img:active {
+    transform: scale(0.99);
+}
+@media (max-width: 820px) {
+    * {
+        font-size: 1em;
+    }
+    h1 {
+        font-size: 1.9em;
+    }
+    img {
+        width: 270px;
+    }
+}
+@media (max-width: 320px) {
+    * {
+        font-size: 0.95em;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    img {
+        width: 220px;
+    }
+}
